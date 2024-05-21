@@ -1,0 +1,20 @@
+{
+  "name": "query-builder",
+  "version": "1.0.0",
+  "description": "Desenvolvido durante o curso Full Stack da Cubos Academy.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "knex": "^3.1.0",
+    "pg": "^8.11.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
