@@ -54,7 +54,20 @@ app.get('/', async (req, res) => {
 
     // DISTINCT
     // campos de email e nome que não se repetem
-    const agenda = await knex('agenda').distinct('email', 'nome').debug()
+    // const agenda = await knex('agenda').distinct('email', 'nome').debug();
+
+    // Group by
+    // o mesmo que select email from agenda group by email 
+    // const agenda = await knex('agenda').select('email').groupBy('email').debug();
+
+
+    // Group by e count 
+    // o mesmo que select email, count(*) from agenda group by email
+    //  const agenda = await knex('agenda').select('email').groupBy('email').count().debug();
+
+    // limit 
+    // const agenda = await knex('agenda').limit(5).debug();
+    const agenda = await knex('agenda').limit(5).offset(2).debug();
 
     return res.json(agenda);
 });
