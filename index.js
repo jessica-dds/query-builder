@@ -67,7 +67,22 @@ app.get('/', async (req, res) => {
 
     // limit 
     // const agenda = await knex('agenda').limit(5).debug();
-    const agenda = await knex('agenda').limit(5).offset(2).debug();
+    // const agenda = await knex('agenda').limit(5).offset(2).debug(); // exlcuindo os dois primeiros registros
+
+    // count - quantidade de registros
+    // const agenda = await knex('agenda').whereNull('email').count().debug();
+
+    // sum - somar um campo específico
+    // const agenda = await knex('agenda').whereNull('email').sum('id').debug();
+
+    // avg - média 
+    //const agenda = await knex('agenda').whereNull('email').avg('id').debug();
+
+    // min - o menor valor de id onde o campo email é nulo 
+    // const agenda = await knex('agenda').whereNull('email').min('id').debug();
+
+    // max - o maior valor de id onde o campo email é nulo -
+    const agenda = await knex('agenda').whereNull('email').max('id').debug();
 
     return res.json(agenda);
 });
