@@ -49,7 +49,6 @@ app.put('/:id', async (req, res) => {
     return res.json(agendaAtualizada);
 });
 
-
 // excluir registro na tabela agenda
 app.delete('/:id', async (req, res) => {
     const { id } = req.params;
